@@ -1,0 +1,1642 @@
+{
+  "schema": 2,
+  "build": 36109,
+  "module": {
+    "name": "citizen-scripting-lua.dll",
+    "sha256": "8712037b1861b7f4f757c94b73c5ec2f1c681e878891ff067254843a655f357c",
+    "code_hash": "0xC27B7E611B7BB8FC"
+  },
+  "generated_at": "2026-09-28T12:27:10Z",
+  "generator": "pipeline/emit_seed/1.0.0",
+  "anchor": {
+    "shape": "C",
+    "state_via": "state = *[0x7B72F0] + 0x58",
+    "export_contract": {
+      "export": "?lua_rpmalloc_state@LuaStateHolder@fx@@CAPEAUlua_State@@AEAPEAX@Z",
+      "export_rva": "0x2DDD30"
+    },
+    "field_disp": "0x58",
+    "holder_global": "0x7B72F0",
+    "ctor_call_site": "0x2DBA1E",
+    "consumer_site": "0x2E20C4",
+    "consumer_pattern": "48 8B 05 ?? ?? ?? ?? 48 8B 90 40 03 00 00",
+    "unique_hits": 1,
+    "liveness_verified": true,
+    "lua_state_via": "state = *[0x7B72F0] + 0x58",
+    "store_ctx": {
+      "pattern": "E8 ?? ?? ?? ?? 48 89 47 58"
+    },
+    "layers": [
+      "E:export_contract",
+      "A:store_ctx",
+      "A:consumer"
+    ],
+    "verification": {
+      "anchor_ok": true
+    }
+  },
+  "structs": {
+    "top": {
+      "offset": 16,
+      "functions": 192,
+      "self_proof_const": true
+    },
+    "l_G": {
+      "offset": 24,
+      "functions": 6273
+    },
+    "ci": {
+      "offset": 32,
+      "functions": 192
+    },
+    "stack_last": {
+      "offset": 40,
+      "functions": 9
+    },
+    "stack": {
+      "offset": 48,
+      "functions": 9
+    }
+  },
+  "struct_scalars": {
+    "slot_size": 32,
+    "slot_shift": 5,
+    "ci_func": 0,
+    "TValue_tt": 16
+  },
+  "functions": [
+    {
+      "name": "SetBoundaryRoutine",
+      "origin": "?GetCitizenLibs@LuaScriptRuntime@fx@@SAPEBUluaL_Reg@@XZ",
+      "fn_rva": "0x2DF180",
+      "pattern": "?? 48 8B 41 20 48 8B 51 10 48 8B 00 48 83 C0 20 48 3B C2 72 ?? 48 8B 41 18 48 83 C0 60 0F 10 00 0F 11 02 0F B6 40 10 88 42 10 48 83 41 10 20 E8",
+      "mask": "?xxxxxxxxxxxxxxxxxxx?xxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "pattern_len": 48,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "Trace",
+      "origin": "?GetCitizenLibs@LuaScriptRuntime@fx@@SAPEBUluaL_Reg@@XZ",
+      "fn_rva": "0x2DE9E0",
+      "pattern": "48 ?? ?? ?? ?? 57 48 83 EC ?? 48 8B 05 ?? ?? ?? ?? 48 33 C4 48 ?? ?? ?? ?? 48 8B 41 20 48 8B D9 48 8B 08 48",
+      "mask": "x????xxxx?xxx????xxxx????xxxxxxxxxxx",
+      "pattern_len": 36,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "CreateThread",
+      "origin": "?GetCitizenLibs@LuaScriptRuntime@fx@@SAPEBUluaL_Reg@@XZ",
+      "fn_rva": "0x2E1D80",
+      "pattern": "40 53 48 83 EC ?? 48 C7 44 24 30 ?? ?? ?? ?? 48 8B 05 ?? ?? ?? ?? 48 33 C4 48 ?? ?? ?? ?? 0F",
+      "mask": "xxxxx?xxxxx????xxx????xxxx????x",
+      "pattern_len": 31,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "CreateThreadNow",
+      "origin": "?GetCitizenLibs@LuaScriptRuntime@fx@@SAPEBUluaL_Reg@@XZ",
+      "fn_rva": "0x2E1E50",
+      "pattern": "40 53 48 83 EC ?? 48 C7 44 24 30 ?? ?? ?? ?? 48 8B 05 ?? ?? ?? ?? 48 33 C4 48 ?? ?? ?? ?? 48 8B D9 0F",
+      "mask": "xxxxx?xxxxx????xxx????xxxx????xxxx",
+      "pattern_len": 34,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "Wait",
+      "origin": "?GetCitizenLibs@LuaScriptRuntime@fx@@SAPEBUluaL_Reg@@XZ",
+      "fn_rva": "0x2E1910",
+      "pattern": "?? 48 8B 41 20 48 8B 51 10 48 8B 00 48 83 C0 20 48 3B C2 72 ?? 48 8B 41 18 48 83 C0 60 0F 10 00 0F 11 02 0F B6 40 10 88 42 10 48 83 41 10 20 F7",
+      "mask": "?xxxxxxxxxxxxxxxxxxx?xxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "pattern_len": 48,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "SetTimeout",
+      "origin": "?GetCitizenLibs@LuaScriptRuntime@fx@@SAPEBUluaL_Reg@@XZ",
+      "fn_rva": "0x2E1FC0",
+      "pattern": "40 53 48 83 EC ?? 48 C7 44 24 30 ?? ?? ?? ?? 48 8B 05 ?? ?? ?? ?? 48 33 C4 48 ?? ?? ?? ?? 48 8B D9 BA",
+      "mask": "xxxxx?xxxxx????xxx????xxxx????xxxx",
+      "pattern_len": 34,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "ClearTimeout",
+      "origin": "?GetCitizenLibs@LuaScriptRuntime@fx@@SAPEBUluaL_Reg@@XZ",
+      "fn_rva": "0x2E20A0",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 57 48 83 EC ?? BA 01 00 00 00 48",
+      "mask": "x????x????x????xxxx?xxxxxx",
+      "pattern_len": 26,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "InvokeNative",
+      "origin": "?GetCitizenLibs@LuaScriptRuntime@fx@@SAPEBUluaL_Reg@@XZ",
+      "fn_rva": "0x53F20",
+      "pattern": "48 ?? ?? ?? ?? 53 48 83 EC ?? 48 C7 44 24 20 ?? ?? ?? ?? 48 8B D9 45 33 C0 41",
+      "mask": "x????xxxx?xxxxx????xxxxxxx",
+      "pattern_len": 26,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "GetNative",
+      "origin": "?GetCitizenLibs@LuaScriptRuntime@fx@@SAPEBUluaL_Reg@@XZ",
+      "fn_rva": "0x54230",
+      "pattern": "48 ?? ?? ?? ?? 57 48 83 EC ?? 48 8B 41 20 48 8B D9 48 C7 44 24 30",
+      "mask": "x????xxxx?xxxxxxxxxxxx",
+      "pattern_len": 22,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "InvokeNative2",
+      "origin": "?GetCitizenLibs@LuaScriptRuntime@fx@@SAPEBUluaL_Reg@@XZ",
+      "fn_rva": "0x53F70",
+      "pattern": "48 ?? ?? ?? ?? 57 48 83 EC ?? 48 C7 44 24 20 ?? ?? ?? ?? 48 ?? ?? ?? ?? 48 8B D9 41",
+      "mask": "x????xxxx?xxxxx????x????xxxx",
+      "pattern_len": 28,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "LoadNative",
+      "origin": "?GetCitizenLibs@LuaScriptRuntime@fx@@SAPEBUluaL_Reg@@XZ",
+      "fn_rva": "0x542E0",
+      "pattern": "48 8B C4 57 41 54 41 55 41 56 41 57 48 81 EC ?? ?? ?? ?? 48 C7 80 48",
+      "mask": "xxxxxxxxxxxxxxx????xxxx",
+      "pattern_len": 23,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "CanonicalizeRef",
+      "origin": "?GetCitizenLibs@LuaScriptRuntime@fx@@SAPEBUluaL_Reg@@XZ",
+      "fn_rva": "0x2E02A0",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 57 48 83 EC ?? 48 8B E9",
+      "mask": "x????x????x????xxxx?xxx",
+      "pattern_len": 23,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "InvokeFunctionReference",
+      "origin": "?GetCitizenLibs@LuaScriptRuntime@fx@@SAPEBUluaL_Reg@@XZ",
+      "fn_rva": "0x2E0360",
+      "pattern": "48 8B C4 55 56 57 41 54 41 55 41 56 41 57 48 83",
+      "mask": "xxxxxxxxxxxxxxxx",
+      "pattern_len": 16,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "PointerValueInt",
+      "origin": "?GetCitizenLibs@LuaScriptRuntime@fx@@SAPEBUluaL_Reg@@XZ",
+      "fn_rva": "0x2E8E00",
+      "pattern": "40 53 48 83 EC ?? 48 8B D9 33 C9 FF 15 ?? ?? ?? ?? 48 8B 53",
+      "mask": "xxxxx?xxxxxxx????xxx",
+      "pattern_len": 20,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "PointerValueFloat",
+      "origin": "?GetCitizenLibs@LuaScriptRuntime@fx@@SAPEBUluaL_Reg@@XZ",
+      "fn_rva": "0x2E8E30",
+      "pattern": "40 53 48 83 EC ?? 48 8B D9 B1 01",
+      "mask": "xxxxx?xxxxx",
+      "pattern_len": 11,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "PointerValueVector",
+      "origin": "?GetCitizenLibs@LuaScriptRuntime@fx@@SAPEBUluaL_Reg@@XZ",
+      "fn_rva": "0x2E8E60",
+      "pattern": "40 53 48 83 EC ?? 48 8B D9 B1 02",
+      "mask": "xxxxx?xxxxx",
+      "pattern_len": 11,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "ReturnResultAnyway",
+      "origin": "?GetCitizenLibs@LuaScriptRuntime@fx@@SAPEBUluaL_Reg@@XZ",
+      "fn_rva": "0x2E8E90",
+      "pattern": "40 53 48 83 EC ?? 48 8B D9 B1 03",
+      "mask": "xxxxx?xxxxx",
+      "pattern_len": 11,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "ResultAsInteger",
+      "origin": "?GetCitizenLibs@LuaScriptRuntime@fx@@SAPEBUluaL_Reg@@XZ",
+      "fn_rva": "0x2E8EC0",
+      "pattern": "40 53 48 83 EC ?? 48 8B D9 B1 04",
+      "mask": "xxxxx?xxxxx",
+      "pattern_len": 11,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "ResultAsLong",
+      "origin": "?GetCitizenLibs@LuaScriptRuntime@fx@@SAPEBUluaL_Reg@@XZ",
+      "fn_rva": "0x2E8EF0",
+      "pattern": "40 53 48 83 EC ?? 48 8B D9 B1 05",
+      "mask": "xxxxx?xxxxx",
+      "pattern_len": 11,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "ResultAsFloat",
+      "origin": "?GetCitizenLibs@LuaScriptRuntime@fx@@SAPEBUluaL_Reg@@XZ",
+      "fn_rva": "0x2E8F20",
+      "pattern": "40 53 48 83 EC ?? 48 8B D9 B1 06",
+      "mask": "xxxxx?xxxxx",
+      "pattern_len": 11,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "ResultAsString",
+      "origin": "?GetCitizenLibs@LuaScriptRuntime@fx@@SAPEBUluaL_Reg@@XZ",
+      "fn_rva": "0x2E8F50",
+      "pattern": "40 53 48 83 EC ?? 48 8B D9 B1 07",
+      "mask": "xxxxx?xxxxx",
+      "pattern_len": 11,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "ResultAsVector",
+      "origin": "?GetCitizenLibs@LuaScriptRuntime@fx@@SAPEBUluaL_Reg@@XZ",
+      "fn_rva": "0x2E8F80",
+      "pattern": "40 53 48 83 EC ?? 48 8B D9 B1 08",
+      "mask": "xxxxx?xxxxx",
+      "pattern_len": 11,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "ResultAsObject2",
+      "origin": "?GetCitizenLibs@LuaScriptRuntime@fx@@SAPEBUluaL_Reg@@XZ",
+      "fn_rva": "0x2E07C0",
+      "pattern": "57 48 81 EC ?? ?? ?? ?? 48 C7 44 24 30 ?? ?? ?? ?? 48 89 58 10 48 89 70 18 48 8B 05 ?? ?? ?? ?? 48 33 C4 48 89 84 24 ?? ?? ?? ?? 48 8B D9 48 8B",
+      "mask": "xxxx????xxxxx????xxxxxxxxxxx????xxxxxxx????xxxxx",
+      "pattern_len": 48,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "_G",
+      "origin": "?GetLuaLibs@LuaScriptRuntime@fx@@SAPEBUluaL_Reg@@XZ",
+      "fn_rva": "0x3251C0",
+      "pattern": "48 ?? ?? ?? ?? 57 48 83 EC ?? BA D8 B9 F0 FF 41",
+      "mask": "x????xxxx?xxxxxx",
+      "pattern_len": 16,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "table",
+      "origin": "?GetLuaLibs@LuaScriptRuntime@fx@@SAPEBUluaL_Reg@@XZ",
+      "fn_rva": "0x337A30",
+      "pattern": "48 ?? ?? ?? ?? 57 48 83 EC ?? 48 8B D9 E8 ?? ?? ?? ?? 48 8B 53 10 41 B9 0D",
+      "mask": "x????xxxx?xxxx????xxxxxxx",
+      "pattern_len": 25,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "string",
+      "origin": "?GetLuaLibs@LuaScriptRuntime@fx@@SAPEBUluaL_Reg@@XZ",
+      "fn_rva": "0x336030",
+      "pattern": "48 ?? ?? ?? ?? 57 48 83 EC ?? 48 8B D9 E8 ?? ?? ?? ?? 48 8B 53 10 41 B9 1A",
+      "mask": "x????xxxx?xxxx????xxxxxxx",
+      "pattern_len": 25,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "math",
+      "origin": "?GetLuaLibs@LuaScriptRuntime@fx@@SAPEBUluaL_Reg@@XZ",
+      "fn_rva": "0x32BC10",
+      "pattern": "48 ?? ?? ?? ?? 57 48 83 EC ?? 48 8B F9 E8 ?? ?? ?? ?? 48 8B 57 10",
+      "mask": "x????xxxx?xxxx????xxxx",
+      "pattern_len": 22,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "coroutine",
+      "origin": "?GetLuaLibs@LuaScriptRuntime@fx@@SAPEBUluaL_Reg@@XZ",
+      "fn_rva": "0x325B40",
+      "pattern": "48 ?? ?? ?? ?? 57 48 83 EC ?? 48 8B D9 E8 ?? ?? ?? ?? 48 8B 53 10 41 B9 08",
+      "mask": "x????xxxx?xxxx????xxxxxxx",
+      "pattern_len": 25,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "utf8",
+      "origin": "?GetLuaLibs@LuaScriptRuntime@fx@@SAPEBUluaL_Reg@@XZ",
+      "fn_rva": "0x338F60",
+      "pattern": "48 ?? ?? ?? ?? 57 48 83 EC ?? 48 8B D9 E8 ?? ?? ?? ?? 48 8B 53 10 41 B9 09",
+      "mask": "x????xxxx?xxxx????xxxxxxx",
+      "pattern_len": 25,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "debug",
+      "origin": "?GetLuaLibs@LuaScriptRuntime@fx@@SAPEBUluaL_Reg@@XZ",
+      "fn_rva": "0x3267C0",
+      "pattern": "48 ?? ?? ?? ?? 57 48 83 EC ?? 48 8B D9 E8 ?? ?? ?? ?? 48 8B 53 10 41 B9 05",
+      "mask": "x????xxxx?xxxx????xxxxxxx",
+      "pattern_len": 25,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "msgpack",
+      "origin": "?GetLuaLibs@LuaScriptRuntime@fx@@SAPEBUluaL_Reg@@XZ",
+      "fn_rva": "0x473AB0",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 57 48 83 EC ?? 48 8B D9 E8 ?? ?? ?? ?? 48 8B 53 10 41 B9 13",
+      "mask": "x????x????xxxx?xxxx????xxxxxxx",
+      "pattern_len": 30,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "json",
+      "origin": "?GetLuaLibs@LuaScriptRuntime@fx@@SAPEBUluaL_Reg@@XZ",
+      "fn_rva": "0x478610",
+      "pattern": "48 ?? ?? ?? ?? 57 48 83 EC ?? 4C 8D 05 ?? ?? ?? ?? 48 8B D9",
+      "mask": "x????xxxx?xxx????xxx",
+      "pattern_len": 20,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "assert",
+      "origin": "via _G (0x3251c0)",
+      "fn_rva": "0x324870",
+      "pattern": "40 53 48 83 EC ?? 48 8B 41 20 48 8B D9 4C 8B 00",
+      "mask": "xxxxx?xxxxxxxxxx",
+      "pattern_len": 16,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "collectgarbage",
+      "origin": "via _G (0x3251c0)",
+      "fn_rva": "0x322FA0",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 57 41 56 41 57 48 83 EC ?? 48 8B 41 20 48 8B D9 4C",
+      "mask": "x????x????xxxxxxxx?xxxxxxxx",
+      "pattern_len": 27,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "dofile",
+      "origin": "via _G (0x3251c0)",
+      "fn_rva": "0x3246F0",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 57 48 83 EC ?? 48 8B 41 20 48 8B D9 4C 8B 51",
+      "mask": "x????x????xxxx?xxxxxxxxxx",
+      "pattern_len": 25,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "error",
+      "origin": "via _G (0x3251c0)",
+      "fn_rva": "0x322810",
+      "pattern": "48 ?? ?? ?? ?? 57 48 83 EC ?? BA 02 00 00 00 48 8B D9 44",
+      "mask": "x????xxxx?xxxxxxxxx",
+      "pattern_len": 19,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "ipairs",
+      "origin": "via _G (0x3251c0)",
+      "fn_rva": "0x323C30",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 41 56 48 83 EC ?? BA",
+      "mask": "x????x????x????x????xxxxx?x",
+      "pattern_len": 27,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "loadfile",
+      "origin": "via _G (0x3251c0)",
+      "fn_rva": "0x323F00",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 41 56 48 83 EC ?? 48 8B 41 20 4C 8D",
+      "mask": "x????x????x????x????xxxxx?xxxxxx",
+      "pattern_len": 32,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "load",
+      "origin": "via _G (0x3251c0)",
+      "fn_rva": "0x3242E0",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 57 41 54 41 56 48 83 EC ?? 48",
+      "mask": "x????x????xxxxxxxx?x",
+      "pattern_len": 20,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "next",
+      "origin": "via _G (0x3251c0)",
+      "fn_rva": "0x323640",
+      "pattern": "40 53 48 83 EC ?? 48 8B 41 20 48 8B D9 48 8B 08 48",
+      "mask": "xxxxx?xxxxxxxxxxx",
+      "pattern_len": 17,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "pairs",
+      "origin": "via _G (0x3251c0)",
+      "fn_rva": "0x323700",
+      "pattern": "48 ?? ?? ?? ?? 57 48 83 EC ?? 48 8B 41 20 48 8B D9 48 8B 08 48 83 C1 20 48 3B 4B 10 72 ?? 48 8B 4B 18 48 83 C1 60 F6 41 10 0F 48",
+      "mask": "x????xxxx?xxxxxxxxxxxxxxxxxxx?xxxxxxxxxxxxx",
+      "pattern_len": 43,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "each",
+      "origin": "via _G (0x3251c0)",
+      "fn_rva": "0x3238E0",
+      "pattern": "48 ?? ?? ?? ?? 55 56 41 56 48 83 EC ?? 48",
+      "mask": "x????xxxxxxx?x",
+      "pattern_len": 14,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "pcall",
+      "origin": "via _G (0x3251c0)",
+      "fn_rva": "0x324AB0",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 57 48 83 EC ?? 48 8B 41 20 48 8B D9 48 8B 08 48 83 C1 20 48 3B 4B 10 72 ?? 48 8B 4B 18 48 83 C1 60 F6",
+      "mask": "x????x????xxxx?xxxxxxxxxxxxxxxxxxx?xxxxxxxxx",
+      "pattern_len": 44,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "print",
+      "origin": "via _G (0x3251c0)",
+      "fn_rva": "0x322170",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 57 48 83 EC ?? 48 8B 41 20 BB 01 00 00 00 48 8B 79",
+      "mask": "x????x????xxxx?xxxxxxxxxxxx",
+      "pattern_len": 27,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "warn",
+      "origin": "via _G (0x3251c0)",
+      "fn_rva": "0x322270",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 56 57 41 56 48 83 EC ?? 48 8B 41",
+      "mask": "x????x????xxxxxxx?xxx",
+      "pattern_len": 21,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "rawlen",
+      "origin": "via _G (0x3251c0)",
+      "fn_rva": "0x322CA0",
+      "pattern": "20 48 8B D9 48 8B 10 48 83 C2 20 48 3B 51 10 72 ?? 48 8B 51 18 48 83 C2 60 0F B6 4A 10 F6 C1 0F 75 ?? 48 8B 43 18 48 83 C0 60 48 3B D0 74 ?? 83",
+      "mask": "xxxxxxxxxxxxxxxx?xxxxxxxxxxxxxxxx?xxxxxxxxxxxx?x",
+      "pattern_len": 48,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "rawget",
+      "origin": "via _G (0x3251c0)",
+      "fn_rva": "0x322D30",
+      "pattern": "40 53 48 83 EC ?? 48 8B 41 20 48 8B D9 4C 8B 08",
+      "mask": "xxxxx?xxxxxxxxxx",
+      "pattern_len": 16,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "rawset",
+      "origin": "via _G (0x3251c0)",
+      "fn_rva": "0x322E00",
+      "pattern": "D9 48 8B 08 48 83 C1 20 48 3B 4B 10 72 ?? 48 8B 4B 18 48 83 C1 60 0F B6 51 10 F6 C2 0F 75 ?? 48 8B 43 18 48 83 C0 60 48 3B C8 74 ?? 83 E2 0F 83",
+      "mask": "xxxxxxxxxxxxx?xxxxxxxxxxxxxxxx?xxxxxxxxxxxx?xxxx",
+      "pattern_len": 48,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "select",
+      "origin": "via _G (0x3251c0)",
+      "fn_rva": "0x324910",
+      "pattern": "48 ?? ?? ?? ?? 57 48 83 EC ?? 48 8B F9 48",
+      "mask": "x????xxxx?xxxx",
+      "pattern_len": 14,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "setmetatable",
+      "origin": "via _G (0x3251c0)",
+      "fn_rva": "0x322A00",
+      "pattern": "48 ?? ?? ?? ?? 57 48 83 EC ?? 48 8B 41 20 48 8B D9 4C 8B 00 4C",
+      "mask": "x????xxxx?xxxxxxxxxxx",
+      "pattern_len": 21,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "tonumber",
+      "origin": "via _G (0x3251c0)",
+      "fn_rva": "0x322490",
+      "pattern": "40 53 56 48 83 EC ?? 4C 8B 51",
+      "mask": "xxxxxx?xxx",
+      "pattern_len": 10,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "tostring",
+      "origin": "via _G (0x3251c0)",
+      "fn_rva": "0x324E80",
+      "pattern": "40 53 48 83 EC ?? 48 8B 41 20 48 8B D9 48 8B 10 48 83 C2 20 48 3B 51 10 72 ?? 48 8B 51 18 48 83 C2 60 F6 42 10 0F 75 ?? 48 8B 49",
+      "mask": "xxxxx?xxxxxxxxxxxxxxxxxxx?xxxxxxxxxxxxx?xxx",
+      "pattern_len": 43,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "type",
+      "origin": "via _G (0x3251c0)",
+      "fn_rva": "0x323460",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 57 48 83 EC ?? 48 8B 41 20 48 8B D9 48 8B 10 48 8D",
+      "mask": "x????x????xxxx?xxxxxxxxxxxx",
+      "pattern_len": 27,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "xpcall",
+      "origin": "via _G (0x3251c0)",
+      "fn_rva": "0x324C70",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 57 48 83 EC ?? 48 8B 41 20 48 8B D9 48 8B 71 10 48 8B 10 48 2B F2 48 83 C2 40",
+      "mask": "x????x????xxxx?xxxxxxxxxxxxxxxxxxxxx",
+      "pattern_len": 36,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "joaat",
+      "origin": "via _G (0x3251c0)",
+      "fn_rva": "0x325040",
+      "pattern": "40 53 48 83 EC ?? 48 8B 41 20 48 8B D9 4C 8B 51 10 4C",
+      "mask": "xxxxx?xxxxxxxxxxxx",
+      "pattern_len": 18,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "scrub",
+      "origin": "via _G (0x3251c0)",
+      "fn_rva": "0x325100",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 57 48 83 EC ?? 48 8B 41 20 BB 01 00 00 00 48 8B 71",
+      "mask": "x????x????xxxx?xxxxxxxxxxxx",
+      "pattern_len": 27,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "qua",
+      "origin": "via _G (0x3251c0)",
+      "fn_rva": "0x317750",
+      "pattern": "4C 8B DC 49 89 5B 18 55",
+      "mask": "xxxxxxxx",
+      "pattern_len": 8,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "quat",
+      "origin": "via _G (0x3251c0)",
+      "fn_rva": "0x317750",
+      "pattern": "4C 8B DC 49 89 5B 18 55",
+      "mask": "xxxxxxxx",
+      "pattern_len": 8,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "dot",
+      "origin": "via _G (0x3251c0)",
+      "fn_rva": "0x314F50",
+      "pattern": "48 83 EC ?? 48 8B 41 20 4C 8B C9",
+      "mask": "xxx?xxxxxxx",
+      "pattern_len": 11,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "cross",
+      "origin": "via _G (0x3251c0)",
+      "fn_rva": "0x315140",
+      "pattern": "40 55 48 ?? ?? ?? ?? 48 81 EC ?? ?? ?? ?? 48 8B 41",
+      "mask": "xxx????xxx????xxx",
+      "pattern_len": 17,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "inv",
+      "origin": "via _G (0x3251c0)",
+      "fn_rva": "0x315760",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 55 48 ?? ?? ?? ?? 48 81 EC ?? ?? ?? ?? 48 8B 05 ?? ?? ?? ?? 48 33 C4 ?? ?? ?? ?? 48 8B 41 20 48 8B D9 48 8B 08",
+      "mask": "x????x????xx????xxx????xxx????xxx????xxxxxxxxxx",
+      "pattern_len": 47,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "norm",
+      "origin": "via _G (0x3251c0)",
+      "fn_rva": "0x315E40",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 57 48 83 EC ?? 48 8B 41 20 48 8B F9 48 8B 71",
+      "mask": "x????x????xxxx?xxxxxxxxxx",
+      "pattern_len": 25,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "slerp",
+      "origin": "via _G (0x3251c0)",
+      "fn_rva": "0x3160B0",
+      "pattern": "40 55 53 56 57 41 56 48 ?? ?? ?? ?? 48 81 EC ?? ?? ?? ?? 48 8B",
+      "mask": "xxxxxxxx????xxx????xx",
+      "pattern_len": 21,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "insert",
+      "origin": "via table (0x337a30)",
+      "fn_rva": "0x3362E0",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 56 48 83 EC ?? BA 01 00 00 00 48 8B F1 44 8D 42 06 E8 ?? ?? ?? ?? BA 01 00 00 00 48 8B CE E8 ?? ?? ?? ?? 48 8B 4E",
+      "mask": "x????x????xxxx?xxxxxxxxxxxxx????xxxxxxxxx????xxx",
+      "pattern_len": 48,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "unpack",
+      "origin": "via table (0x337a30)",
+      "fn_rva": "0x336C00",
+      "pattern": "40 57 48 83 EC ?? 48 8B 41 20 48 8B F9 4C 8B 18 4C 8B 57",
+      "mask": "xxxxx?xxxxxxxxxxxxx",
+      "pattern_len": 19,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "remove",
+      "origin": "via table (0x337a30)",
+      "fn_rva": "0x3363F0",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 56 48 83 EC ?? BA 01 00 00 00 48 8B F1 44 8D 42 06 E8 ?? ?? ?? ?? BA 01 00 00 00 48 8B CE E8 ?? ?? ?? ?? 48 8B E8",
+      "mask": "x????x????xxxx?xxxxxxxxxxxxx????xxxxxxxxx????xxx",
+      "pattern_len": 48,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "move",
+      "origin": "via table (0x337a30)",
+      "fn_rva": "0x336510",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 57 41 54 41 55 41 56 41 57 48 83 EC ?? BA",
+      "mask": "x????x????xxxxxxxxxxxx?x",
+      "pattern_len": 24,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "sort",
+      "origin": "via table (0x337a30)",
+      "fn_rva": "0x337330",
+      "pattern": "48 ?? ?? ?? ?? 57 48 83 EC ?? BA 01 00 00 00 48 8B D9 44",
+      "mask": "x????xxxx?xxxxxxxxx",
+      "pattern_len": 19,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "type",
+      "origin": "via table (0x337a30)",
+      "fn_rva": "0x337430",
+      "pattern": "48 ?? ?? ?? ?? 57 48 83 EC ?? 48 8B 41 20 48 8B D9 4C 8B 18",
+      "mask": "x????xxxx?xxxxxxxxxx",
+      "pattern_len": 20,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "create",
+      "origin": "via table (0x337a30)",
+      "fn_rva": "0x3376B0",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 57 48 83 EC ?? BA 01 00 00 00 48 8B D9 E8 ?? ?? ?? ?? BA",
+      "mask": "x????x????xxxx?xxxxxxxxx????x",
+      "pattern_len": 29,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "new",
+      "origin": "via table (0x337a30)",
+      "fn_rva": "0x3376B0",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 57 48 83 EC ?? BA 01 00 00 00 48 8B D9 E8 ?? ?? ?? ?? BA",
+      "mask": "x????x????xxxx?xxxxxxxxx????x",
+      "pattern_len": 29,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "byte",
+      "origin": "via string (0x336030)",
+      "fn_rva": "0x330980",
+      "pattern": "48 ?? ?? ?? ?? 55 56 57 48 83 EC ?? 48 8B 41 20 48 8B D9",
+      "mask": "x????xxxxxx?xxxxxxx",
+      "pattern_len": 19,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "char",
+      "origin": "via string (0x336030)",
+      "fn_rva": "0x330B50",
+      "pattern": "4C 8B DC 53 48 81 EC ?? ?? ?? ?? 48 8B 05 ?? ?? ?? ?? 48 33 C4 48 89 84 24 ?? ?? ?? ?? 4C",
+      "mask": "xxxxxxx????xxx????xxxxxxx????x",
+      "pattern_len": 30,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "dump",
+      "origin": "via string (0x336030)",
+      "fn_rva": "0x330D60",
+      "pattern": "40 55 57 41 56 48 8D AC",
+      "mask": "xxxxxxxx",
+      "pattern_len": 8,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "format",
+      "origin": "via string (0x336030)",
+      "fn_rva": "0x333660",
+      "pattern": "48 ?? ?? ?? ?? 55 57 41 54 41 55 41 56 48 8D AC 24 ?? ?? ?? ?? 48 81 EC ?? ?? ?? ?? 48 8B 05 ?? ?? ?? ?? 48 33 C4 48 89 85 ?? ?? ?? ?? 48 8B 41",
+      "mask": "x????xxxxxxxxxxxx????xxx????xxx????xxxxxx????xxx",
+      "pattern_len": 48,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "gmatch",
+      "origin": "via string (0x336030)",
+      "fn_rva": "0x332450",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 57 41 56 41 57 48 83 EC ?? 48 8B 41 20 48 8B F9",
+      "mask": "x????x????x????xxxxxxxx?xxxxxxx",
+      "pattern_len": 31,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "gsub",
+      "origin": "via string (0x336030)",
+      "fn_rva": "0x332B80",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 55 41 54 41 55 41 56 41 57 48 8D AC",
+      "mask": "x????x????x????xxxxxxxxxxxx",
+      "pattern_len": 27,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "len",
+      "origin": "via string (0x336030)",
+      "fn_rva": "0x32F3B0",
+      "pattern": "48 ?? ?? ?? ?? 57 48 83 EC ?? 48 8B 41 20 48 8B D9 48 8B 10 48 83 C2 20 48 3B 51 10 72 ?? 48 8B 51 18 48 83 C2 60 0F B6 42 10 24",
+      "mask": "x????xxxx?xxxxxxxxxxxxxxxxxxx?xxxxxxxxxxxxx",
+      "pattern_len": 43,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "rep",
+      "origin": "via string (0x336030)",
+      "fn_rva": "0x32FB90",
+      "pattern": "40 53 57 41 55 48 81 EC",
+      "mask": "xxxxxxxx",
+      "pattern_len": 8,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "strtrim",
+      "origin": "via string (0x336030)",
+      "fn_rva": "0x32FF10",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 41 56 48 83 EC ?? 48 8B 41 20 48 8B F1",
+      "mask": "x????x????x????x????xxxxx?xxxxxxx",
+      "pattern_len": 33,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "strsplit",
+      "origin": "via string (0x336030)",
+      "fn_rva": "0x3300F0",
+      "pattern": "40 53 57 48 83 EC ?? 48 8B 41 20 48",
+      "mask": "xxxxxx?xxxxx",
+      "pattern_len": 12,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "strjoin",
+      "origin": "via string (0x336030)",
+      "fn_rva": "0x330390",
+      "pattern": "40 53 56 57 41 56 48 81",
+      "mask": "xxxxxxxx",
+      "pattern_len": 8,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "strconcat",
+      "origin": "via string (0x336030)",
+      "fn_rva": "0x3306A0",
+      "pattern": "48 ?? ?? ?? ?? 57 48 83 EC ?? 48 8B 41 20 48 8B D9 48 8B 79 10 48",
+      "mask": "x????xxxx?xxxxxxxxxxxx",
+      "pattern_len": 22,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "tostringall",
+      "origin": "via string (0x336030)",
+      "fn_rva": "0x330720",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 57 48 83 EC ?? 48 8B 41 20 BE",
+      "mask": "x????x????xxxx?xxxxx",
+      "pattern_len": 20,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "reverse",
+      "origin": "via string (0x336030)",
+      "fn_rva": "0x32F650",
+      "pattern": "4C 8B DC 53 48 81 EC ?? ?? ?? ?? 48 8B 05 ?? ?? ?? ?? 48 33 C4 48 89 84 24 ?? ?? ?? ?? 48",
+      "mask": "xxxxxxx????xxx????xxxxxxx????x",
+      "pattern_len": 30,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "pack",
+      "origin": "via string (0x336030)",
+      "fn_rva": "0x334E20",
+      "pattern": "48 ?? ?? ?? ?? 57 48 81 EC ?? ?? ?? ?? 48 8B 05 ?? ?? ?? ?? 48 33 C4 48 89 84 24 ?? ?? ?? ?? 48 8B 41",
+      "mask": "x????xxxx????xxx????xxxxxxx????xxx",
+      "pattern_len": 34,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "packsize",
+      "origin": "via string (0x336030)",
+      "fn_rva": "0x334F90",
+      "pattern": "40 53 57 41 57 48 83 EC ?? 48",
+      "mask": "xxxxxxxx?x",
+      "pattern_len": 10,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "unpack",
+      "origin": "via string (0x336030)",
+      "fn_rva": "0x335740",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 41 56 48 83 EC ?? 48 8B 41 20 48 8B D9 48 8B 08",
+      "mask": "x????x????x????x????xxxxx?xxxxxxxxxx",
+      "pattern_len": 36,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "blob",
+      "origin": "via string (0x336030)",
+      "fn_rva": "0x3307A0",
+      "pattern": "48 ?? ?? ?? ?? 56 48 83 EC ?? 48 8B 41 20 48 8B D9 48 8B 08",
+      "mask": "x????xxxx?xxxxxxxxxx",
+      "pattern_len": 20,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "blob_pack",
+      "origin": "via string (0x336030)",
+      "fn_rva": "0x335940",
+      "pattern": "40 53 56 57 41 54 41 56 48",
+      "mask": "xxxxxxxxx",
+      "pattern_len": 9,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "blob_unpack",
+      "origin": "via string (0x336030)",
+      "fn_rva": "0x335CB0",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 41 54 41 56 41 57 48 83 EC ?? 48 8B 41 20 33",
+      "mask": "x????x????x????x????xxxxxxxxx?xxxxx",
+      "pattern_len": 35,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "abs",
+      "origin": "via math (0x32bc10)",
+      "fn_rva": "0x329020",
+      "pattern": "40 53 48 83 EC ?? 48 8B 41 20 48 8B D9 48 8B 08 4C 8B 43 10 48 83 C1 20 49 3B C8 72 ?? 48 8B 53",
+      "mask": "xxxxx?xxxxxxxxxxxxxxxxxxxxxx?xxx",
+      "pattern_len": 32,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "atan",
+      "origin": "via math (0x32bc10)",
+      "fn_rva": "0x3293F0",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 57 48 83 EC ?? 48 8B 41 20 48 8B D9 0F",
+      "mask": "x????x????xxxx?xxxxxxxx",
+      "pattern_len": 23,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "tointeger",
+      "origin": "via math (0x32bc10)",
+      "fn_rva": "0x329530",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 57 48 83 EC ?? 48 8B 41 20 48 8B F1 48 C7",
+      "mask": "x????x????xxxx?xxxxxxxxx",
+      "pattern_len": 24,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "fmod",
+      "origin": "via math (0x32bc10)",
+      "fn_rva": "0x3297F0",
+      "pattern": "48 ?? ?? ?? ?? 57 48 83 EC ?? 48 8B 41 20 48 8B F9 4C 8B 41 10 48 8B 10 48 8D",
+      "mask": "x????xxxx?xxxxxxxxxxxxxxxx",
+      "pattern_len": 26,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "ult",
+      "origin": "via math (0x32bc10)",
+      "fn_rva": "0x329BC0",
+      "pattern": "48 ?? ?? ?? ?? 57 48 83 EC ?? BA 01 00 00 00 48 8B F9 E8 ?? ?? ?? ?? BA 02 00 00 00 48 8B CF 48 8B D8 E8 ?? ?? ?? ?? 4C 8B 47 10 48 3B",
+      "mask": "x????xxxx?xxxxxxxxx????xxxxxxxxxxxx????xxxxxx",
+      "pattern_len": 45,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "log",
+      "origin": "via math (0x32bc10)",
+      "fn_rva": "0x329C20",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 57 48 83 EC ?? 48 8B 41 20 48 8B F9 0F ?? ?? ?? ?? 0F ?? ?? ?? ?? 0F",
+      "mask": "x????x????xxxx?xxxxxxxx????x????x",
+      "pattern_len": 33,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "modf",
+      "origin": "via math (0x32bc10)",
+      "fn_rva": "0x3299F0",
+      "pattern": "8B 08 4C 8B 43 10 48 83 C1 20 49 3B C8 72 ?? 48 8B 43 18 48 83 C0 60 EB ?? 48 8B C1 80 78 10 03 75 ?? BA 01 00 00 00 48 8B CB E8 ?? ?? ?? ?? 48",
+      "mask": "xxxxxxxxxxxxxx?xxxxxxxxx?xxxxxxxx?xxxxxxxxx????x",
+      "pattern_len": 48,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "sqrt",
+      "origin": "via math (0x32bc10)",
+      "fn_rva": "0x329B20",
+      "pattern": "?? 48 8B 41 20 48 8B D9 0F 57 C0 F2 0F ?? ?? ?? ?? 48 8B 08 48 83 C1 20 48 3B 4B 10 72 ?? 48 8B 4B 18 48 83 C1 60 80 79 10 13 75 ?? F2 0F 10 09",
+      "mask": "?xxxxxxxxxxxx????xxxxxxxxxxxx?xxxxxxxxxxxxx?xxxx",
+      "pattern_len": 48,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "type",
+      "origin": "via math (0x32bc10)",
+      "fn_rva": "0x32A180",
+      "pattern": "48 ?? ?? ?? ?? 57 48 83 EC ?? 48 8B 41 20 48 8B D9 4C 8B 10",
+      "mask": "x????xxxx?xxxxxxxxxx",
+      "pattern_len": 20,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "atan2",
+      "origin": "via math (0x32bc10)",
+      "fn_rva": "0x3293F0",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 57 48 83 EC ?? 48 8B 41 20 48 8B D9 0F",
+      "mask": "x????x????xxxx?xxxxxxxx",
+      "pattern_len": 23,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "ldexp",
+      "origin": "via math (0x32bc10)",
+      "fn_rva": "0x32ABD0",
+      "pattern": "40 53 48 83 EC ?? 48 8B 41 20 48 8B D9 0F 57 C0 0F",
+      "mask": "xxxxx?xxxxxxxxxxx",
+      "pattern_len": 17,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "scalbn",
+      "origin": "via math (0x32bc10)",
+      "fn_rva": "0x32BAF0",
+      "pattern": "48 ?? ?? ?? ?? 57 48 83 EC ?? BA 02 00 00 00 48 8B D9 E8 ?? ?? ?? ?? 48 8B 53 20 0F",
+      "mask": "x????xxxx?xxxxxxxxx????xxxxx",
+      "pattern_len": 28,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "clamp",
+      "origin": "via math (0x32bc10)",
+      "fn_rva": "0x3167B0",
+      "pattern": "48 83 EC ?? 48 8B 41 20 4C 8B C1",
+      "mask": "xxx?xxxxxxx",
+      "pattern_len": 11,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "random",
+      "origin": "via math (0x32bc10)",
+      "fn_rva": "0x32A290",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 56 48 83 EC ?? 48 8B 41",
+      "mask": "x????x????xxxx?xxx",
+      "pattern_len": 18,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "randomseed",
+      "origin": "via math (0x32bc10)",
+      "fn_rva": "0x32A730",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 41 56 48 83 EC ?? 48 8B 41 20 48 8B D9 48 8B 10",
+      "mask": "x????x????x????x????xxxxx?xxxxxxxxxx",
+      "pattern_len": 36,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "create",
+      "origin": "via coroutine (0x325b40)",
+      "fn_rva": "0x325660",
+      "pattern": "48 ?? ?? ?? ?? 57 48 83 EC ?? 48 8B 41 20 48 8B D9 48 8B 10 48 83 C2 20 48 3B 51 10 72 ?? 48 8B 51 18 48 83 C2 60 0F B6 4A 10 F6",
+      "mask": "x????xxxx?xxxxxxxxxxxxxxxxxxx?xxxxxxxxxxxxx",
+      "pattern_len": 43,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "resume",
+      "origin": "via coroutine (0x325b40)",
+      "fn_rva": "0x3254B0",
+      "pattern": "48 ?? ?? ?? ?? 57 48 83 EC ?? 48 8B 41 20 48 8B D9 48 8B 08 48 83 C1 20 48 3B 4B 10 72 ?? 48 8B 4B 18 48 83 C1 60 80",
+      "mask": "x????xxxx?xxxxxxxxxxxxxxxxxxx?xxxxxxxxx",
+      "pattern_len": 39,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "status",
+      "origin": "via coroutine (0x325b40)",
+      "fn_rva": "0x325830",
+      "pattern": "48 ?? ?? ?? ?? 57 48 83 EC ?? 48 8B 41 20 48 8B D9 48 8B 08 4C",
+      "mask": "x????xxxx?xxxxxxxxxxx",
+      "pattern_len": 21,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "wrap",
+      "origin": "via coroutine (0x325b40)",
+      "fn_rva": "0x325730",
+      "pattern": "8B 08 48 83 C1 20 48 3B 4B 10 72 ?? 48 8B 4B 18 48 83 C1 60 0F B6 51 10 F6 C2 0F 75 ?? 48 8B 43 18 48 83 C0 60 48 3B C8 74 ?? 80 E2 0F 80 FA 07",
+      "mask": "xxxxxxxxxxx?xxxxxxxxxxxxxxxx?xxxxxxxxxxxx?xxxxxx",
+      "pattern_len": 48,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "isyieldable",
+      "origin": "via coroutine (0x325b40)",
+      "fn_rva": "0x325940",
+      "pattern": "48 ?? ?? ?? ?? 57 48 83 EC ?? 48 8B 41 20 48 8B D9 4C 8B 49",
+      "mask": "x????xxxx?xxxxxxxxxx",
+      "pattern_len": 20,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "close",
+      "origin": "via coroutine (0x325b40)",
+      "fn_rva": "0x325A30",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 57 48 83 EC ?? 48 8B 41 20 48 8B D9 48 8B 08 48 83 C1 20 48 3B 4B 10 72 ?? 48 8B 4B 18 48 83 C1 60 33",
+      "mask": "x????x????xxxx?xxxxxxxxxxxxxxxxxxx?xxxxxxxxx",
+      "pattern_len": 44,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "offset",
+      "origin": "via utf8 (0x338f60)",
+      "fn_rva": "0x338320",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 56 41 54 41 56 48",
+      "mask": "x????x????xxxxxx",
+      "pattern_len": 16,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "codepoint",
+      "origin": "via utf8 (0x338f60)",
+      "fn_rva": "0x337E60",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 56 57 41 57 48 83 EC ?? 48 8B 41 20 48 8B",
+      "mask": "x????x????xxxxxxx?xxxxxx",
+      "pattern_len": 24,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "char",
+      "origin": "via utf8 (0x338f60)",
+      "fn_rva": "0x338190",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 57 48 81 EC ?? ?? ?? ?? 48 8B 05 ?? ?? ?? ?? 48 33 C4 48 89 84 24 ?? ?? ?? ?? 48 8B D9",
+      "mask": "x????x????xxxx????xxx????xxxxxxx????xxx",
+      "pattern_len": 39,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "len",
+      "origin": "via utf8 (0x338f60)",
+      "fn_rva": "0x337BF0",
+      "pattern": "48 ?? ?? ?? ?? 55 56 57 48 83 EC ?? 48 8B 41 20 48 8B F9 33",
+      "mask": "x????xxxxxx?xxxxxxxx",
+      "pattern_len": 20,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "strlenutf8",
+      "origin": "via utf8 (0x338f60)",
+      "fn_rva": "0x337BF0",
+      "pattern": "48 ?? ?? ?? ?? 55 56 57 48 83 EC ?? 48 8B 41 20 48 8B F9 33",
+      "mask": "x????xxxxxx?xxxxxxxx",
+      "pattern_len": 20,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "strcmputf8i",
+      "origin": "via utf8 (0x338f60)",
+      "fn_rva": "0x338560",
+      "pattern": "40 53 55 56 41 56 41 57",
+      "mask": "xxxxxxxx",
+      "pattern_len": 8,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "len16",
+      "origin": "via utf8 (0x338f60)",
+      "fn_rva": "0x3388F0",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 41 54 41 56 41 57 48 83 EC ?? 48 8B 41 20 48 8B F9 48",
+      "mask": "x????x????x????x????xxxxxxxxx?xxxxxxxx",
+      "pattern_len": 38,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "codes",
+      "origin": "via utf8 (0x338f60)",
+      "fn_rva": "0x338E00",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 57 48 83 EC ?? 48 8B 41 20 48 8B D9 4C 8B 41",
+      "mask": "x????x????xxxx?xxxxxxxxxx",
+      "pattern_len": 25,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "getinfo",
+      "origin": "via debug (0x3267c0)",
+      "fn_rva": "0x325DA0",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 57 41 56 41 57 48 81",
+      "mask": "x????x????x????xxxxxxx",
+      "pattern_len": 22,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "setmetatable",
+      "origin": "via debug (0x3267c0)",
+      "fn_rva": "0x325C20",
+      "pattern": "48 ?? ?? ?? ?? 57 48 83 EC ?? 48 8B 41 20 48 8B D9 48 8B 08 48 83 C1 40",
+      "mask": "x????xxxx?xxxxxxxxxxxxxx",
+      "pattern_len": 24,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "getupvalue",
+      "origin": "via debug (0x3267c0)",
+      "fn_rva": "0x326510",
+      "pattern": "48 ?? ?? ?? ?? 57 48 83 EC ?? BA 02 00 00 00 48 8B D9 E8 ?? ?? ?? ?? 48 8B 53 20 48",
+      "mask": "x????xxxx?xxxxxxxxx????xxxxx",
+      "pattern_len": 28,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "traceback",
+      "origin": "via debug (0x3267c0)",
+      "fn_rva": "0x326610",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 56 57 41 57 48 83 EC ?? 48 8B 41 20 48 8D",
+      "mask": "x????x????xxxxxxx?xxxxxx",
+      "pattern_len": 24,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "pack",
+      "origin": "via msgpack (0x473ab0)",
+      "fn_rva": "0x471EB0",
+      "pattern": "48 ?? ?? ?? ?? 57 48 83 EC ?? 48 8B 41 20 48 8B F9 48 8B 71 10 48 2B",
+      "mask": "x????xxxx?xxxxxxxxxxxxx",
+      "pattern_len": 23,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "pack_args",
+      "origin": "via msgpack (0x473ab0)",
+      "fn_rva": "0x471FD0",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 57 48 83 EC ?? 48 8B 41 20 BA 01",
+      "mask": "x????x????xxxx?xxxxxx",
+      "pattern_len": 21,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "new",
+      "origin": "via msgpack (0x473ab0)",
+      "fn_rva": "0x471E90",
+      "pattern": "48 83 EC ?? BA 01 00 00 00 E8",
+      "mask": "xxx?xxxxxx",
+      "pattern_len": 10,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "setoption",
+      "origin": "via msgpack (0x473ab0)",
+      "fn_rva": "0x472D90",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 57 41 56 41 57 48 83 EC ?? 48 8B 41 20 48 8B D9",
+      "mask": "x????x????x????xxxxxxxx?xxxxxxx",
+      "pattern_len": 31,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "set_string",
+      "origin": "via msgpack (0x473ab0)",
+      "fn_rva": "0x4734B0",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 41 56 48 83 EC ?? 48 8B 41 20 48 8B F9 48 8B 10",
+      "mask": "x????x????x????x????xxxxx?xxxxxxxxxx",
+      "pattern_len": 36,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "extend",
+      "origin": "via msgpack (0x473ab0)",
+      "fn_rva": "0x472860",
+      "pattern": "40 53 48 83 EC ?? BA 01 00 00 00 48 8B D9 E8 ?? ?? ?? ?? 48 8B",
+      "mask": "xxxxx?xxxxxxxxx????xx",
+      "pattern_len": 21,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "extend_get",
+      "origin": "via msgpack (0x473ab0)",
+      "fn_rva": "0x4725E0",
+      "pattern": "40 53 48 83 EC ?? BA 01 00 00 00 48 8B D9 E8 ?? ?? ?? ?? 48 83",
+      "mask": "xxxxx?xxxxxxxxx????xx",
+      "pattern_len": 21,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "extend_clear",
+      "origin": "via msgpack (0x473ab0)",
+      "fn_rva": "0x4728B0",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 57 48 83 EC ?? 48 8B 41 20 48 8B D9 48 8B 69",
+      "mask": "x????x????x????xxxx?xxxxxxxxxx",
+      "pattern_len": 30,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "gettype",
+      "origin": "via msgpack (0x473ab0)",
+      "fn_rva": "0x4729C0",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 57 48 83 EC ?? 48 8B 41 20 48 8B D9 48 8B 71 10 48 8B 10 48 2B F2 48 83 C2 20",
+      "mask": "x????x????xxxx?xxxxxxxxxxxxxxxxxxxxx",
+      "pattern_len": 36,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "settype",
+      "origin": "via msgpack (0x473ab0)",
+      "fn_rva": "0x472AE0",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 56 57 41 56 48 83 EC ?? 48 8B 51",
+      "mask": "x????x????xxxxxxx?xxx",
+      "pattern_len": 21,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "boolean",
+      "origin": "via msgpack (0x473ab0)",
+      "fn_rva": "0x470740",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 57 48 83 EC ?? 4C 8D 05 ?? ?? ?? ?? BA 01 00 00 00 48 8B D9",
+      "mask": "x????x????xxxx?xxx????xxxxxxxx",
+      "pattern_len": 30,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "string",
+      "origin": "via msgpack (0x473ab0)",
+      "fn_rva": "0x470DD0",
+      "pattern": "40 53 41 54 41 57 48 83 EC ?? 4C",
+      "mask": "xxxxxxxxx?x",
+      "pattern_len": 11,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "binary",
+      "origin": "via msgpack (0x473ab0)",
+      "fn_rva": "0x470BC0",
+      "pattern": "40 53 56 41 57 48 83 EC",
+      "mask": "xxxxxxxx",
+      "pattern_len": 8,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "array",
+      "origin": "via msgpack (0x473ab0)",
+      "fn_rva": "0x470F90",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 41 56 48 83 EC ?? 4C 8D 05 ?? ?? ?? ?? BA 01 00 00 00 48 8B D9 E8 ?? ?? ?? ?? 4C",
+      "mask": "x????x????xxxxx?xxx????xxxxxxxxx????x",
+      "pattern_len": 37,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "_table",
+      "origin": "via msgpack (0x473ab0)",
+      "fn_rva": "0x471390",
+      "pattern": "40 55 56 57 48 83 EC ?? 4C",
+      "mask": "xxxxxxx?x",
+      "pattern_len": 9,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "number",
+      "origin": "via msgpack (0x473ab0)",
+      "fn_rva": "0x4700E0",
+      "pattern": "40 53 55 56 48 83 EC ?? 48 8B 05",
+      "mask": "xxxxxxx?xxx",
+      "pattern_len": 11,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "any",
+      "origin": "via msgpack (0x473ab0)",
+      "fn_rva": "0x4714E0",
+      "pattern": "40 53 57 41 54 48 81 EC",
+      "mask": "xxxxxxxx",
+      "pattern_len": 8,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "__gc",
+      "origin": "via msgpack (0x473ab0)",
+      "fn_rva": "0x471E50",
+      "pattern": "48 83 EC ?? 45 33 C0 41 8D",
+      "mask": "xxx?xxxxx",
+      "pattern_len": 9,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "__len",
+      "origin": "via msgpack (0x473ab0)",
+      "fn_rva": "0x471AF0",
+      "pattern": "83 EC ?? 4C 8D 05 ?? ?? ?? ?? BA 01 00 00 00 48 8B D9 E8 ?? ?? ?? ?? 48 85 C0 75 ?? 4C 8D 05 ?? ?? ?? ?? 48 8B CB 8D 50 01 E8 ?? ?? ?? ?? 48 8B",
+      "mask": "xx?xxx????xxxxxxxxx????xxxx?xxx????xxxxxxx????xx",
+      "pattern_len": 48,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "__concat",
+      "origin": "via msgpack (0x473ab0)",
+      "fn_rva": "0x471B70",
+      "pattern": "40 53 56 48 83 EC ?? 4C 8D",
+      "mask": "xxxxxx?xx",
+      "pattern_len": 9,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "__call",
+      "origin": "via msgpack (0x473ab0)",
+      "fn_rva": "0x471D40",
+      "pattern": "?? BA 01 00 00 00 48 8B D9 E8 ?? ?? ?? ?? 48 8B F0 48 85 C0 75 ?? 4C 8D 05 ?? ?? ?? ?? 48 8B CB 8D 50 01 E8 ?? ?? ?? ?? 33 C0 48 ?? ?? ?? ?? 48",
+      "mask": "?xxxxxxxxx????xxxxxxx?xxx????xxxxxxx????xxx????x",
+      "pattern_len": 48,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "__add",
+      "origin": "via msgpack (0x473ab0)",
+      "fn_rva": "0x471D40",
+      "pattern": "?? BA 01 00 00 00 48 8B D9 E8 ?? ?? ?? ?? 48 8B F0 48 85 C0 75 ?? 4C 8D 05 ?? ?? ?? ?? 48 8B CB 8D 50 01 E8 ?? ?? ?? ?? 33 C0 48 ?? ?? ?? ?? 48",
+      "mask": "?xxxxxxxxx????xxxxxxx?xxx????xxxxxxx????xxx????x",
+      "pattern_len": 48,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "__shl",
+      "origin": "via msgpack (0x473ab0)",
+      "fn_rva": "0x471D40",
+      "pattern": "?? BA 01 00 00 00 48 8B D9 E8 ?? ?? ?? ?? 48 8B F0 48 85 C0 75 ?? 4C 8D 05 ?? ?? ?? ?? 48 8B CB 8D 50 01 E8 ?? ?? ?? ?? 33 C0 48 ?? ?? ?? ?? 48",
+      "mask": "?xxxxxxxxx????xxxxxxx?xxx????xxxxxxx????xxx????x",
+      "pattern_len": 48,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "__tostring",
+      "origin": "via msgpack (0x473ab0)",
+      "fn_rva": "0x471DF0",
+      "pattern": "BA 01 00 00 00 48 8B D9 E8 ?? ?? ?? ?? 48 8B D0 48 85 C0 75 ?? 4C 8D 05 ?? ?? ?? ?? 48 8B CB 8D 50 01 E8 ?? ?? ?? ?? 33 C0 48 83 C4 ?? 5B C3 0F",
+      "mask": "xxxxxxxxx????xxxxxxx?xxx????xxxxxxx????xxxxx?xxx",
+      "pattern_len": 48,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "__close",
+      "origin": "via msgpack (0x473ab0)",
+      "fn_rva": "0x471E50",
+      "pattern": "48 83 EC ?? 45 33 C0 41 8D",
+      "mask": "xxx?xxxxx",
+      "pattern_len": 9,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "decode",
+      "origin": "via json (0x478610)",
+      "fn_rva": "0x477550",
+      "pattern": "48 8B C4 48 89 48 08 53",
+      "mask": "xxxxxxxx",
+      "pattern_len": 8,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "encode",
+      "origin": "via json (0x478610)",
+      "fn_rva": "0x476120",
+      "pattern": "48 ?? ?? ?? ?? 53 56 57 41 54 41 55 41 56 41 57 48 81 EC ?? ?? ?? ?? 48 C7 84 24 88",
+      "mask": "x????xxxxxxxxxxxxxx????xxxxx",
+      "pattern_len": 28,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "setoption",
+      "origin": "via json (0x478610)",
+      "fn_rva": "0x477BE0",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 4C ?? ?? ?? ?? 41 57 48 83 EC ?? 48 8B 41",
+      "mask": "x????x????x????x????xxxxx?xxx",
+      "pattern_len": 29,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "getoption",
+      "origin": "via json (0x478610)",
+      "fn_rva": "0x478040",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 41 54 41 56 41 57 48 83 EC ?? 48 8B 41 20 48 8B D9",
+      "mask": "x????x????x????xxxxxxxxx?xxxxxxx",
+      "pattern_len": 32,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "isobject",
+      "origin": "via json (0x478610)",
+      "fn_rva": "0x478560",
+      "pattern": "40 53 48 83 EC ?? 4C ?? ?? ?? ?? C6 ?? ?? ?? ?? BA 01 00 00 00 48 8B D9 E8 ?? ?? ?? ?? 84 C0 74 ?? 80 ?? ?? ?? ?? B2 11 74",
+      "mask": "xxxxx?x????x????xxxxxxxxx????xxx?x????xxx",
+      "pattern_len": 41,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    },
+    {
+      "name": "isarray",
+      "origin": "via json (0x478610)",
+      "fn_rva": "0x4785B0",
+      "pattern": "40 53 48 83 EC ?? 4C ?? ?? ?? ?? C6 ?? ?? ?? ?? BA 01 00 00 00 48 8B D9 E8 ?? ?? ?? ?? 84 C0 74 ?? 80 ?? ?? ?? ?? B2 11 75",
+      "mask": "xxxxx?x????x????xxxxxxxxx????xxx?x????xxx",
+      "pattern_len": 41,
+      "unique_hits": 1,
+      "pdata_entry_ok": true
+    }
+  ],
+  "verification": {
+    "g1_static_unique": {
+      "ok": true,
+      "carried_patterns": 155,
+      "rejected_nonunique": 30
+    },
+    "g2_anchor_static": {
+      "ok": true,
+      "notes": [
+        "holder in writable section + consumer pattern unique + field disp decoded from store bytes"
+      ]
+    },
+    "g3_runtime_verify_state": {
+      "status": "not_run",
+      "reason": "offline; resolver-side gate at load time"
+    },
+    "g4_functional": {
+      "status": "not_run",
+      "reason": "offline; requires a running citizen scripting host"
+    }
+  },
+  "flavor": "client",
+  "source": "installed"
+}

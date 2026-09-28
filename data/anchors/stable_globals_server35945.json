@@ -1,0 +1,71 @@
+{
+  "build": 35945,
+  "module": "citizen-scripting-lua.dll",
+  "module_code_hash": "0x9AE516E6D07AFF98",
+  "generated_at": "2026-09-28T02:27:23Z",
+  "generator": "pipeline/find_state_anchor/1.0.0",
+  "symbols_used": 14,
+  "reg_tables": [
+    {
+      "table_rva": "0x1FA330",
+      "export": "?GetCitizenLibs@LuaScriptRuntime@fx@@SAPEBUluaL_Reg@@XZ",
+      "entries": 1
+    },
+    {
+      "table_rva": "0x1FA550",
+      "export": "?GetLuaLibs@LuaScriptRuntime@fx@@SAPEBUluaL_Reg@@XZ",
+      "entries": 11
+    }
+  ],
+  "state_ptr_candidates": [],
+  "runtime_ptr_candidates": [],
+  "lua_state_field_histogram": [
+    {
+      "disp": "0x8",
+      "count": 6
+    },
+    {
+      "disp": "0x18",
+      "count": 5
+    },
+    {
+      "disp": "0x328",
+      "count": 2
+    },
+    {
+      "disp": "0x58",
+      "count": 2
+    },
+    {
+      "disp": "0x10",
+      "count": 2
+    },
+    {
+      "disp": "0x80",
+      "count": 2
+    },
+    {
+      "disp": "0xB8",
+      "count": 2
+    },
+    {
+      "disp": "0x220",
+      "count": 2
+    },
+    {
+      "disp": "0xA0",
+      "count": 1
+    },
+    {
+      "disp": "0x38",
+      "count": 1
+    }
+  ],
+  "verification": {
+    "anchor_ok": false,
+    "notes": [
+      "offline check is structural (writable section + multi-caller use + call-adjacency); dereference verification is the resolver-running gate (phase 6)",
+      "static_qword is the file-image value; a heap state pointer lives there only after init, so 0 is EXPECTED offline"
+    ]
+  }
+}

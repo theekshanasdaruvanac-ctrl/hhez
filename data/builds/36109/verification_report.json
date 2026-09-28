@@ -1,0 +1,43 @@
+{
+  "build": 36109,
+  "module": "C:\\Users\\HEWS\\AppData\\Local\\FiveM\\FiveM.app\\citizen-scripting-lua.dll",
+  "module_sha256": "8712037b1861b7f4f757c94b73c5ec2f1c681e878891ff067254843a655f357c",
+  "ran_at": "2026-09-28T13:16:09Z",
+  "g1_static_unique": {
+    "ok": true,
+    "patterns": 155,
+    "failures": []
+  },
+  "g2_anchor_static": {
+    "ok": true,
+    "required": [
+      "consumer_disp_to_holder",
+      "consumer_unique",
+      "export_executable_pdata",
+      "export_present",
+      "field_disp_matches_bytes",
+      "holder_writable",
+      "store_ctx_unique"
+    ],
+    "checks": {
+      "store_ctx_unique": true,
+      "field_disp_matches_bytes": true,
+      "consumer_unique": true,
+      "consumer_disp_to_holder": true,
+      "holder_writable": true,
+      "export_present": true,
+      "export_executable_pdata": true
+    }
+  },
+  "g3_runtime_verify_state": {
+    "status": "not_run_offline",
+    "notes": [
+      "component refuses standalone load: [WinError 1114] A dynamic link library (DLL) initialization routine failed; gate runs inside the live fx host instead"
+    ]
+  },
+  "g4_functional": {
+    "status": "not_run",
+    "reason": "G3 did not pass; full 1+1==2 needs lua_pcallk (not exported by the fork) -> live-host gate"
+  },
+  "pass": true
+}

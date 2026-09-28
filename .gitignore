@@ -1,0 +1,8 @@
+cache/
+__pycache__/
+*.pyc
+build/
+*.part
+.pytest_cache/
+FiveM-Offsets-Dumper-main/
+fivem-dumper/build*/

@@ -1,0 +1,6 @@
+# Analysis pipeline runtime (pure-Python, runs identically on Linux CI).
+capstone>=5.0.7        # x86-64 disassembly
+py7zr>=0.20            # artifact bundle extraction (server.7z)
+requests>=2.31         # artifact listing + download with retries
+pefile>=2023.2.7       # version-resource build stamps + PE metadata
+pytest>=8.0            # unit tests (run pre-fetch in CI, offline-safe)

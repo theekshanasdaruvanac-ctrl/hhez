@@ -1,0 +1,372 @@
+{
+  "build": 36109,
+  "module": "C:\\Users\\HEWS\\AppData\\Local\\FiveM\\FiveM.app\\citizen-scripting-lua.dll",
+  "module_name": "citizen-scripting-lua.dll",
+  "module_code_hash": "0xC27B7E611B7BB8FC",
+  "generated_at": "2026-09-28T05:08:16Z",
+  "generator": "pipeline/find_state_anchor/2.1.0",
+  "symbols_used": 284,
+  "reg_tables": [
+    {
+      "table_rva": "0x5C3160",
+      "origin": "?GetCitizenLibs@LuaScriptRuntime@fx@@SAPEBUluaL_Reg@@XZ",
+      "entries": 35
+    },
+    {
+      "table_rva": "0x5C33A0",
+      "origin": "?GetLuaLibs@LuaScriptRuntime@fx@@SAPEBUluaL_Reg@@XZ",
+      "entries": 9
+    },
+    {
+      "table_rva": "0x5C4A90",
+      "origin": "via _G (0x3251c0)",
+      "entries": 67
+    },
+    {
+      "table_rva": "0x5C8890",
+      "origin": "via table (0x337a30)",
+      "entries": 13
+    },
+    {
+      "table_rva": "0x5C34A0",
+      "origin": "via string (0x336030)",
+      "entries": 26
+    },
+    {
+      "table_rva": "0x5C3A70",
+      "origin": "via math (0x32bc10)",
+      "entries": 55
+    },
+    {
+      "table_rva": "0x5C5110",
+      "origin": "via math (0x32bc10)",
+      "entries": 2
+    },
+    {
+      "table_rva": "0x5C4A00",
+      "origin": "via coroutine (0x325b40)",
+      "entries": 8
+    },
+    {
+      "table_rva": "0x5C8730",
+      "origin": "via utf8 (0x338f60)",
+      "entries": 8
+    },
+    {
+      "table_rva": "0x5C86D0",
+      "origin": "via debug (0x3267c0)",
+      "entries": 5
+    },
+    {
+      "table_rva": "0x5C99F0",
+      "origin": "via msgpack (0x473ab0)",
+      "entries": 17
+    },
+    {
+      "table_rva": "0x5C9BC0",
+      "origin": "via msgpack (0x473ab0)",
+      "entries": 53
+    },
+    {
+      "table_rva": "0x5C9B30",
+      "origin": "via msgpack (0x473ab0)",
+      "entries": 8
+    },
+    {
+      "table_rva": "0x60B060",
+      "origin": "via json (0x478610)",
+      "entries": 10
+    }
+  ],
+  "chosen": {
+    "shape": "C",
+    "global_rva": "0x7B72F0",
+    "lua_state_via": "state = *[0x7B72F0].+0x58",
+    "record": {
+      "pattern": "48 8B 05 ?? ?? ?? ?? 48 8B 90 40 03 00 00",
+      "mask": "xxx????xxxxxxx",
+      "pattern_len": 14,
+      "disp_offset": 3,
+      "disp_size": 4,
+      "unique_hits": 1,
+      "site": "0x2E20C4",
+      "global_rva": "0x7B72F0"
+    },
+    "shape_c": {
+      "records": [
+        {
+          "allocator_export": "?lua_rpmalloc_state@LuaStateHolder@fx@@CAPEAUlua_State@@AEAPEAX@Z",
+          "allocator_rva": "0x2DDD30",
+          "call_rva": "0x2DBA1E",
+          "caller_rva": "0x2DB920",
+          "field_disp": "0x58",
+          "store_reg_base": "rdi",
+          "store_pattern": "48 89 47 58",
+          "singleton_publish_global": null
+        }
+      ],
+      "field_disp": "0x58",
+      "singleton_publish_global": "0x7B72F0",
+      "liveness_verified": true
+    }
+  },
+  "shape_a_candidates": [
+    {
+      "global_rva": "0x7B6C38",
+      "section": ".data/w",
+      "writable": true,
+      "shape_a_direct_state": {
+        "rcx_callers": 1,
+        "sites": 1,
+        "sample_symbol": "lib:SetTickRoutine",
+        "sample_load_rva": "0x49FEA5",
+        "load_pattern": "48 8D 0D ?? ?? ?? ??",
+        "load_mask": "xxx????"
+      },
+      "shape_b_runtime_singleton": {
+        "loader_functions": 3,
+        "total_loads": 3,
+        "stores": 1,
+        "follow_disp_histogram": []
+      }
+    }
+  ],
+  "shape_b_candidates": [
+    {
+      "global_rva": "0x7B4300",
+      "section": ".data/w",
+      "writable": true,
+      "shape_a_direct_state": {
+        "rcx_callers": 0,
+        "sites": 0,
+        "sample_symbol": null,
+        "sample_load_rva": null,
+        "load_pattern": null,
+        "load_mask": null
+      },
+      "shape_b_runtime_singleton": {
+        "loader_functions": 4096,
+        "total_loads": 4096,
+        "stores": 1,
+        "follow_disp_histogram": [
+          {
+            "disp": "0x0",
+            "count": 18
+          },
+          {
+            "disp": "0x10",
+            "count": 1
+          },
+          {
+            "disp": "0x1",
+            "count": 1
+          }
+        ]
+      }
+    },
+    {
+      "global_rva": "0x7B72F0",
+      "section": ".data/w",
+      "writable": true,
+      "shape_a_direct_state": {
+        "rcx_callers": 0,
+        "sites": 0,
+        "sample_symbol": null,
+        "sample_load_rva": null,
+        "load_pattern": null,
+        "load_mask": null
+      },
+      "shape_b_runtime_singleton": {
+        "loader_functions": 27,
+        "total_loads": 64,
+        "stores": 19,
+        "follow_disp_histogram": [
+          {
+            "disp": "0x0",
+            "count": 85
+          },
+          {
+            "disp": "0x80",
+            "count": 6
+          },
+          {
+            "disp": "0x70",
+            "count": 6
+          },
+          {
+            "disp": "0x250",
+            "count": 1
+          },
+          {
+            "disp": "0x1D8",
+            "count": 1
+          },
+          {
+            "disp": "0xD8",
+            "count": 1
+          }
+        ]
+      }
+    },
+    {
+      "global_rva": "0x7B7390",
+      "section": ".data/w",
+      "writable": true,
+      "shape_a_direct_state": {
+        "rcx_callers": 0,
+        "sites": 0,
+        "sample_symbol": null,
+        "sample_load_rva": null,
+        "load_pattern": null,
+        "load_mask": null
+      },
+      "shape_b_runtime_singleton": {
+        "loader_functions": 3,
+        "total_loads": 3,
+        "stores": 5,
+        "follow_disp_histogram": [
+          {
+            "disp": "0xA0000",
+            "count": 1
+          }
+        ]
+      }
+    },
+    {
+      "global_rva": "0x7B77B0",
+      "section": ".data/w",
+      "writable": true,
+      "shape_a_direct_state": {
+        "rcx_callers": 0,
+        "sites": 0,
+        "sample_symbol": null,
+        "sample_load_rva": null,
+        "load_pattern": null,
+        "load_mask": null
+      },
+      "shape_b_runtime_singleton": {
+        "loader_functions": 3,
+        "total_loads": 3,
+        "stores": 5,
+        "follow_disp_histogram": [
+          {
+            "disp": "0x1410",
+            "count": 1
+          }
+        ]
+      }
+    },
+    {
+      "global_rva": "0x7B7250",
+      "section": ".data/w",
+      "writable": true,
+      "shape_a_direct_state": {
+        "rcx_callers": 0,
+        "sites": 0,
+        "sample_symbol": null,
+        "sample_load_rva": null,
+        "load_pattern": null,
+        "load_mask": null
+      },
+      "shape_b_runtime_singleton": {
+        "loader_functions": 4,
+        "total_loads": 4,
+        "stores": 4,
+        "follow_disp_histogram": [
+          {
+            "disp": "0x8",
+            "count": 4
+          },
+          {
+            "disp": "0x0",
+            "count": 1
+          },
+          {
+            "disp": "0x10",
+            "count": 1
+          }
+        ]
+      }
+    },
+    {
+      "global_rva": "0x7B77C0",
+      "section": ".data/w",
+      "writable": true,
+      "shape_a_direct_state": {
+        "rcx_callers": 0,
+        "sites": 0,
+        "sample_symbol": null,
+        "sample_load_rva": null,
+        "load_pattern": null,
+        "load_mask": null
+      },
+      "shape_b_runtime_singleton": {
+        "loader_functions": 7,
+        "total_loads": 7,
+        "stores": 2,
+        "follow_disp_histogram": [
+          {
+            "disp": "0x0",
+            "count": 1
+          }
+        ]
+      }
+    },
+    {
+      "global_rva": "0x7B7A20",
+      "section": ".data/w",
+      "writable": true,
+      "shape_a_direct_state": {
+        "rcx_callers": 0,
+        "sites": 0,
+        "sample_symbol": null,
+        "sample_load_rva": null,
+        "load_pattern": null,
+        "load_mask": null
+      },
+      "shape_b_runtime_singleton": {
+        "loader_functions": 2,
+        "total_loads": 3,
+        "stores": 2,
+        "follow_disp_histogram": [
+          {
+            "disp": "0x8",
+            "count": 1
+          }
+        ]
+      }
+    },
+    {
+      "global_rva": "0x7CDFA0",
+      "section": ".data/w",
+      "writable": true,
+      "shape_a_direct_state": {
+        "rcx_callers": 0,
+        "sites": 0,
+        "sample_symbol": null,
+        "sample_load_rva": null,
+        "load_pattern": null,
+        "load_mask": null
+      },
+      "shape_b_runtime_singleton": {
+        "loader_functions": 2,
+        "total_loads": 7,
+        "stores": 2,
+        "follow_disp_histogram": [
+          {
+            "disp": "0x8000",
+            "count": 1
+          }
+        ]
+      }
+    }
+  ],
+  "verification": {
+    "anchor_ok": true,
+    "notes": [
+      "offline evidence is structural: exported state allocator whose result is stored at [holder+D] (shape C), writable global multi-caller rcx-before-known-lua-call (shape A), or publish-store + multi-loader singleton (shape B)",
+      "shape C field_disp doubles as lua_state field offset input for Phase 4",
+      "the deref itself (load G -> non-null -> +D -> LUA_TTHREAD tag at L+0xC) is Gate 3, resolver-side, marked not_run in offline runs"
+    ]
+  }
+}

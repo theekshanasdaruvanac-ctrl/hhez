@@ -1,0 +1,84 @@
+{
+  "from_build": 35945,
+  "to_build": 36727,
+  "anchor": {
+    "changed": false
+  },
+  "structs": {
+    "top": {
+      "seed": {
+        "offset": 16,
+        "functions": 142,
+        "self_proof_const": true
+      },
+      "fresh": {
+        "offset": 16,
+        "functions": 142,
+        "self_proof_const": true
+      },
+      "changed": false
+    },
+    "l_G": {
+      "seed": {
+        "offset": 24,
+        "functions": 1759
+      },
+      "fresh": {
+        "offset": 24,
+        "functions": 1759
+      },
+      "changed": false
+    },
+    "ci": {
+      "seed": {
+        "offset": 32,
+        "functions": 142
+      },
+      "fresh": {
+        "offset": 32,
+        "functions": 142
+      },
+      "changed": false
+    },
+    "stack_last": {
+      "seed": {
+        "offset": 40,
+        "functions": 9
+      },
+      "fresh": {
+        "offset": 40,
+        "functions": 9
+      },
+      "changed": false
+    },
+    "stack": {
+      "seed": {
+        "offset": 48,
+        "functions": 9
+      },
+      "fresh": {
+        "offset": 48,
+        "functions": 9
+      },
+      "changed": false
+    }
+  },
+  "functions": {
+    "pattern_survival": {
+      "unique": 160,
+      "ambiguous": 0,
+      "dead": 0,
+      "not_replayed": 0,
+      "died_examples": [],
+      "replayed": 160,
+      "survival_rate": 1.0
+    },
+    "ground_truth": {
+      "seed_registrations": 181,
+      "fresh_registrations": 181,
+      "new_names": [],
+      "gone_names": [],
+      "delta_note": "names compared across reg tables (pdata-verified registrations), not pattern hits"
+    }
+  }
+}

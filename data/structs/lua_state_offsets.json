@@ -1,0 +1,160 @@
+{
+  "schema": 2,
+  "generated": "2026-09-28T08:55:58+00:00",
+  "method": "census + shape-family labeling; field ORDER from luaglm-548 lstate.h (FiveM's lua fork), offsets measured from code",
+  "modules": [
+    {
+      "module": "citizen-scripting-lua.dll",
+      "label": "client",
+      "path": "C:\\Users\\HEWS\\AppData\\Local\\FiveM\\FiveM.app\\citizen-scripting-lua.dll",
+      "sha256": "8712037b1861b7f4f757c94b73c5ec2f1c681e878891ff067254843a655f357c",
+      "evidence": {
+        "functions_scanned": 36264,
+        "slot_size": 32,
+        "slot_shift": 5,
+        "top": {
+          "offset": 16,
+          "functions": 192,
+          "self_proof_const": true
+        },
+        "ci": {
+          "offset": 32,
+          "functions": 192
+        },
+        "ci_func_offset": 0,
+        "l_G": {
+          "offset": 24,
+          "functions": 6273
+        },
+        "stack_last": {
+          "offset": 40,
+          "functions": 9
+        },
+        "stack": {
+          "offset": 48,
+          "functions": 9
+        },
+        "TValue": {
+          "size": 32,
+          "tt_offset": 16,
+          "tt_functions": 65
+        },
+        "tt_state_byte": {
+          "offset": null,
+          "note": "cmp byte [L+D],8 census-EMPTY; runtime gate uses l_G equality"
+        },
+        "g_share_witness": {
+          "0x78": 61,
+          "0x0": 2,
+          "0x30": 1
+        }
+      }
+    },
+    {
+      "module": "citizen-scripting-lua.dll",
+      "label": "server",
+      "path": "cache\\artifacts\\35945\\files\\citizen-scripting-lua.dll",
+      "sha256": "d099ccd1180186292a5c8ffd19185a2f644970a3da53bcf6730ea5a0c9b50fd1",
+      "evidence": {
+        "functions_scanned": 6865,
+        "slot_size": 32,
+        "slot_shift": 5,
+        "top": {
+          "offset": 16,
+          "functions": 142,
+          "self_proof_const": true
+        },
+        "ci": {
+          "offset": 32,
+          "functions": 142
+        },
+        "ci_func_offset": 0,
+        "l_G": {
+          "offset": 24,
+          "functions": 1759
+        },
+        "stack_last": {
+          "offset": 40,
+          "functions": 9
+        },
+        "stack": {
+          "offset": 48,
+          "functions": 9
+        },
+        "TValue": {
+          "size": 32,
+          "tt_offset": 16,
+          "tt_functions": 51
+        },
+        "tt_state_byte": {
+          "offset": null,
+          "note": "cmp byte [L+D],8 census-EMPTY; runtime gate uses l_G equality"
+        },
+        "g_share_witness": {
+          "0x78": 33,
+          "0x0": 2,
+          "0x30": 1
+        }
+      }
+    }
+  ],
+  "agreement": {
+    "top": {
+      "values": [
+        "0x10",
+        "0x10"
+      ],
+      "agree": true
+    },
+    "l_G": {
+      "values": [
+        "0x18",
+        "0x18"
+      ],
+      "agree": true
+    },
+    "ci": {
+      "values": [
+        "0x20",
+        "0x20"
+      ],
+      "agree": true
+    },
+    "stack_last": {
+      "values": [
+        "0x28",
+        "0x28"
+      ],
+      "agree": true
+    },
+    "stack": {
+      "values": [
+        "0x30",
+        "0x30"
+      ],
+      "agree": true
+    },
+    "slot_size": {
+      "values": [
+        32,
+        32
+      ],
+      "agree": true
+    }
+  },
+  "all_agree": true,
+  "resolver": {
+    "state": "holder_global -> read field 0x58  (Phase 3 anchor)",
+    "top_ptr": "state + 0x10",
+    "L_G": "state + 0x18",
+    "ci": "state + 0x20",
+    "ci_func": "ci + 0x0",
+    "gettop": "( *(state+0x10) - *( *(state+0x20) + 0x0 ) - 0x20 ) >> 5",
+    "stacksize": "(*(state+0x28) - *(state+0x30)) >> 5"
+  },
+  "notes": [
+    "TValue.tt_offset measured via setnilvalue byte stores",
+    "state tt byte not observed modern; Gate3 must use l_G equality + functional probe, NOT tt==ntag",
+    "CallInfo.top not load-bearing here (gettop uses ci->func only); CallInfo.func offset is measured (F operand)"
+  ]
+}

@@ -1,0 +1,184 @@
+# lua_State anchor + offsets for every FiveM build, forever.
+#
+# detect -> dump -> pull-request
+#
+# State lives in the repo (data/latest_build.txt + data/builds/<id>/): it
+# is reviewable, cannot expire, and each PR shows exactly which build
+# produced which seed. Nothing is hardcoded: the pipeline re-derives the
+# anchor chain (export contract -> allocator -> field -> holder liveness)
+# and the lua_State struct offsets from the module's own code.
+name: lua-state-dump
+
+on:
+  schedule:
+    - cron: "23 */6 * * *"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "run even when no new build was detected"
+        type: boolean
+        default: false
+      build:
+        description: "specific build number (blank = latest)"
+        type: string
+        default: ""
+
+permissions:
+  contents: read
+
+jobs:
+  # ------------------------------------------------------------------ detect
+  detect:
+    name: detect a new server build
+    runs-on: ubuntu-latest
+    outputs:
+      run: ${{ steps.check.outputs.run }}
+      build: ${{ steps.check.outputs.build }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: install deps
+        run: pip install -r requirements.txt
+
+      - name: decide whether there is work to do
+        id: check
+        shell: python
+        run: |
+          import os, sys, pathlib
+          sys.path.insert(0, ".")
+          from pipeline.fetch_artifact import latest_build
+          requested = "${{ inputs.build }}".strip()
+          force = "${{ inputs.force }}" == "true"
+          prev_file = pathlib.Path("data/latest_build.txt")
+          prev = prev_file.read_text().strip() if prev_file.exists() else ""
+          latest = str(latest_build())
+          if requested:
+              build, run = requested, "true"
+          elif force or not prev or latest != prev:
+              build, run = latest, "true"
+          else:
+              build, run = latest, "false"
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              f.write("run=" + run + "\nbuild=" + build + "\n")
+          print("prev=" + (prev or "none") + " latest=" + latest
+                + " -> run=" + run)
+
+  # -------------------------------------------------------------------- dump
+  dump:
+    name: derive offsets for build ${{ needs.detect.outputs.build }}
+    needs: detect
+    if: needs.detect.outputs.run == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: install deps
+        run: pip install -r requirements.txt
+
+      - name: unit tests (pattern engine + diff, fast)
+        run: python -m pytest tests -q
+
+      - name: run the any-build chain
+        env:
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python pipeline/any_build.py --build "${{ needs.detect.outputs.build }}"
+          # exit code: 0 anchor ok + survival above threshold; nonzero = stop
+          # before opening a PR with a broken chain.
+
+      - name: verification gates (static; runtime gates report not_run)
+        run: |
+          python pipeline/verify.py \
+            --seed "data/builds/${{ needs.detect.outputs.build }}/lua_state.json"
+
+      - name: summarize
+        run: |
+          B="${{ needs.detect.outputs.build }}"
+          {
+            echo "## lua_State dump - build $B"
+            echo
+            echo "- anchor: $(jq -r '.anchor.state_via // .anchor.shape' "data/builds/$B/lua_state.json")"
+            echo "- functions carried: $(jq '.functions | length' "data/builds/$B/lua_state.json")"
+            echo "- G1/G2: $(jq -r '.g1_static_unique.ok' "data/builds/$B/verification_report.json") / $(jq -r '.g2_anchor_static.ok' "data/builds/$B/verification_report.json")"
+            echo "- survival vs previous seed: $(jq -r '.functions.pattern_survival.survival_rate // "cold chain"' "data/builds/$B/diff_report.json")"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: upload raw output (kept even on partial failure for triage)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-${{ needs.detect.outputs.build }}
+          path: |
+            data/builds/${{ needs.detect.outputs.build }}/
+          if-no-files-found: warn
+
+      - name: bump the tracked build id
+        run: echo "${{ needs.detect.outputs.build }}" > data/latest_build.txt
+
+  # ------------------------------------------------------------ pull request
+  pull-request:
+    name: open the offsets pull request
+    needs: [detect, dump]
+    if: >
+      always() && needs.detect.outputs.run == 'true' &&
+      needs.dump.result == 'success'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: bring the fresh seed back into the tree
+        uses: actions/download-artifact@v4
+        with:
+          name: build-${{ needs.detect.outputs.build }}
+          path: .
+
+      - name: bump the tracked build id
+        run: echo "${{ needs.detect.outputs.build }}" > data/latest_build.txt
+
+      - name: open or update a pull request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: lua-state-dump/update
+          base: main
+          commit-message: |
+            lua_state offsets for FiveM build ${{ needs.detect.outputs.build }}
+
+            Generated by pipeline/any_build.py from the public artifact
+            bundle: anchor chain re-derived (export contract / allocator
+            field / holder liveness), struct offsets from the gettop
+            function family, function patterns from luaL_Reg ground truth.
+            No hardcoded addresses anywhere.
+          title: "lua_State offsets: build ${{ needs.detect.outputs.build }}"
+          body: |
+            Automated lua_State seed for server build `${{ needs.detect.outputs.build }}`.
+
+            | file | contents |
+            |---|---|
+            | `data/builds/<build>/lua_state.json` | anchor chain, struct offsets, self-proven ground-truth function patterns |
+            | `data/builds/<build>/diff_report.json` | anchor/struct drift + pattern survival vs the previous seed |
+            | `data/builds/<build>/verification_report.json` | G1/G2 measured static; G3/G4 explicit not_run (live-host gates) |
+
+            A **dead** pattern in the diff report is a deliberate refusal to
+            guess: a name whose signature no longer matches is reported, never
+            re-attached to a lookalike. The anchor chain is independent of
+            function patterns, so survival can drop without the seed being
+            wrong — and the chain itself is verified by G2 in this PR.
+          labels: |
+            automated
+            offsets
+          delete-branch: true
+          add-paths: |
+            data/builds/${{ needs.detect.outputs.build }}/
+            data/latest_build.txt
+          commit-changes: true

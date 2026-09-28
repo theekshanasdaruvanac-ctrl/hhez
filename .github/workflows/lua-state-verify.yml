@@ -1,0 +1,44 @@
+# Re-run the gates on committed seeds: fresh-fetched artifact + seed in
+# the repo must still agree. Proves reproducibility, catches a seed that
+# only "passed" because of a stale local cache.
+name: lua-state-verify
+
+on:
+  pull_request:
+    paths:
+      - "*.json"
+      - "dumper/**"
+      - "pipeline/**"
+  workflow_dispatch: {}
+  push:
+    paths:
+      - "pipeline/**"
+      - "dumper/**"
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  gates:
+    name: gates on the tracked seed
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: install deps
+        run: pip install -r requirements.txt
+
+      - name: unit tests
+        run: python -m pytest tests -q
+
+      - name: verify the seed the repo currently tracks
+        run: |
+          B="$(tr -d '[:space:]' < data/latest_build.txt)"
+          test -n "$B" || { echo "::error::data/latest_build.txt empty"; exit 1; }
+          python pipeline/fetch_build_cli.py "$B"   # warm the cache
+          python pipeline/verify.py --seed "data/builds/$B/lua_state.json"

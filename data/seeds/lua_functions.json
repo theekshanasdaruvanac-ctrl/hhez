@@ -1,0 +1,44 @@
+{
+  "build": 35945,
+  "module": "citizen-scripting-lua.dll",
+  "generator": "pipeline/1.0.0 (bootstrap)",
+  "inferred_lua_version": "5.5.1",
+  "target_code_hash": "0x9AE516E6D07AFF98",
+  "generated_at": "2026-09-27T20:04:31Z",
+  "reference_compiler": "MSVC /O2 /MT (local BuildTools, vcvars64)",
+  "lua_functions": {
+    "lua_settop": {
+      "rva": "0x73100",
+      "pattern": "0F 1F 84 00 00 00 00 00 41 C6",
+      "mask": "xxxxxxxxxx",
+      "unique": true,
+      "pdata_entry_ok": true,
+      "fn_size": 116,
+      "reference_version": "5.5.1",
+      "pattern_offset": 56
+    },
+    "lua_tolstring": {
+      "rva": "0x73670",
+      "pattern": "48 ?? ?? ?? ?? 48 ?? ?? ?? ?? 57 48 83 EC ?? 49 8B D8 8B F2 48 8B F9 E8",
+      "mask": "x????x????xxxx?xxxxxxxxx",
+      "unique": true,
+      "pdata_entry_ok": true,
+      "fn_size": 169,
+      "reference_version": "5.5.1",
+      "pattern_offset": 0
+    }
+  },
+  "verification": {
+    "static_unique": true,
+    "pdata_entry_ok": true,
+    "notes": [
+      "luaL_newstate: FAILED \u2014 no unique pdata-entry pattern from any reference in 5.5.1, 5.5.0, 5.4.9, 5.4.8, 5.4.7, 5.4.6, 5.4.5, 5.4.4, 5.4.3, 5.4.2, 5.4.1, 5.4.0",
+      "lua_close: FAILED \u2014 no unique pdata-entry pattern from any reference in 5.5.1, 5.5.0, 5.4.9, 5.4.8, 5.4.7, 5.4.6, 5.4.5, 5.4.4, 5.4.3, 5.4.2, 5.4.1, 5.4.0",
+      "luaL_loadbufferx: FAILED \u2014 no unique pdata-entry pattern from any reference in 5.5.1, 5.5.0, 5.4.9, 5.4.8, 5.4.7, 5.4.6, 5.4.5, 5.4.4, 5.4.3, 5.4.2, 5.4.1, 5.4.0",
+      "lua_pcallk: FAILED \u2014 no unique pdata-entry pattern from any reference in 5.5.1, 5.5.0, 5.4.9, 5.4.8, 5.4.7, 5.4.6, 5.4.5, 5.4.4, 5.4.3, 5.4.2, 5.4.1, 5.4.0",
+      "lua_gettop: FAILED \u2014 no unique pdata-entry pattern from any reference in 5.5.1, 5.5.0, 5.4.9, 5.4.8, 5.4.7, 5.4.6, 5.4.5, 5.4.4, 5.4.3, 5.4.2, 5.4.1, 5.4.0",
+      "lua_pushvalue: FAILED \u2014 no unique pdata-entry pattern from any reference in 5.5.1, 5.5.0, 5.4.9, 5.4.8, 5.4.7, 5.4.6, 5.4.5, 5.4.4, 5.4.3, 5.4.2, 5.4.1, 5.4.0",
+      "community-dump cross-check unavailable: FiveM-Offsets-Dumper JSONs are Discord-gated placeholders; replaced by unique-match + pdata-entry + size-envelope gates"
+    ]
+  }
+}
